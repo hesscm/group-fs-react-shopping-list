@@ -36,12 +36,12 @@ function App() {
         axios({
             method: 'PUT',
             url: '/'
-           )}.then((response) => {
+           }.then((response) => {
         console.log('list was reset');
     }).catch((error) => {
         console.log('there was an error resetting list', error);
     })
-}
+        )}
 
     // update status to purchased
 
