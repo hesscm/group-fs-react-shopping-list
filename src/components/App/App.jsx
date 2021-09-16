@@ -19,30 +19,31 @@ function App() {
 
     {/* // AXIOS PUT HERE */ }
     // Clear list deletes all objects from database
-       const clearList = () => {
-           axios({
-               method: 'DELETE',
-               url: '/'
-           }).then(response => {
-               console.log('cleared list', response);
-           }).catch(error => {
-               console.log('error clearing list', error);
-           })
-       }
+    const clearList = () => {
+        axios({
+            method: 'DELETE',
+            url: '/'
+        }).then(response => {
+            console.log('cleared list', response);
+        }).catch(error => {
+            console.log('error clearing list', error);
+        })
+    }
 
 
     {/* // AXIOS PUT/item HERE */ }
-       const resetList = () => {
-           axios({
-               method: 'PUT',
-               url: '/'
-           )}.then(response => {
-               console.log('list was reset');
-           }).catch(error => {
-               console.log('there was an error resetting list', error);
-           })
+    const resetList = () => {
+        axios({
+            method: 'PUT',
+            url: '/'
+           )}.then((response) => {
+        console.log('list was reset');
+    }).catch((error) => {
+        console.log('there was an error resetting list', error);
+    })
+}
 
-        // update status to purchased
+    // update status to purchased
 
     {/* // AXIOS DELETE HERE */ }
 
@@ -52,13 +53,14 @@ function App() {
     {/* // AXIOS DELETE/item HERE */ }
 
 
-    
+
     return (
         <div className="App">
             <Header />
             <main>
                 <p>Under Construction...</p>
-                <ResetList clearList={clearList} />
+                <ResetList clearList={clearList}
+                    resetList={resetList} />
             </main>
         </div>
     );

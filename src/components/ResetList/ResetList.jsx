@@ -6,8 +6,8 @@ function resetList(props) {
         <>
             <h2>Shopping List</h2>
             <br />
-            <button onClick={}>Reset</button>
-            <button onClck={props.clearList}>Clear</button>
+            <button onClick={props.resetList}>Reset</button>
+            <button onClick={props.clearList}>Clear</button>
         </>
     )
 }
