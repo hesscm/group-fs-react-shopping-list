@@ -1,4 +1,3 @@
-
 const list = [
   {name :'flour', quantity: 1, unit: 'lbs', isPurchased: FALSE},
   {name :'cake', quantity: 2, unit: 'lbs', isPurchased: FALSE},
@@ -18,6 +17,7 @@ function ShoppingList(props) {
                 
                 <button class="buy-item-button">Buy</button>
                 <button class="remove-item-button">Remove</button>
+
             </div>
         </>
     )
