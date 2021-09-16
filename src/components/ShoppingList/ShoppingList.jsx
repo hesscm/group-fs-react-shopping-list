@@ -5,7 +5,7 @@ const list = [
   {name :'pudding', quantity: 5, unit: 'cups', isPurchased: FALSE},
 ];
 
-function ShoppingList() {
+function ShoppingList(props) {
     return(
         <>
             <div class="shopping-list-box">
@@ -16,8 +16,8 @@ function ShoppingList() {
                 )}
                  
                 
-                <button class="item-button">Buy</button>
-                <button class="item-button">Remove</button>
+                <button class="buy-item-button">Buy</button>
+                <button class="remove-item-button">Remove</button>
             </div>
         </>
     )
