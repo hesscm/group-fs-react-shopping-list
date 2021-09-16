@@ -3,6 +3,7 @@ import axios from 'axios';
 import {useState, useEffect} from 'react';
 import ListForm from '../ListForm/ListForm.jsx';
 import Header from '../Header/Header.jsx'
+import ShoppingList from '../ShoppingList/ShoppingList.jsx'
 import './App.css';
 import ResetList from '../ResetList/ResetList';
 
@@ -94,6 +95,10 @@ function App() {
 
 
     {/* // AXIOS DELETE/item HERE */ }
+<<<<<<< HEAD
+    
+    
+=======
     const removeItem = (itemId) => {
         axios({
             method: 'DELETE',
@@ -106,6 +111,7 @@ function App() {
     }
 
 
+>>>>>>> master
     return (
         <div className="App">
             <Header />
@@ -116,8 +122,12 @@ function App() {
             setNewItemUnit={setNewItemUnit}
             />
                 <p>Under Construction...</p>
+<<<<<<< HEAD
+                <ShoppingList />
+=======
                 <ResetList clearList={clearList}
                     resetList={resetList} />
+>>>>>>> master
             </main>
         </div>
     );
