@@ -1,6 +1,5 @@
 import React from 'react';
 
-import ListForm from '../ListForm/ListForm.jsx';
 import Header from '../Header/Header.jsx'
 import './App.css';
 
@@ -40,7 +39,6 @@ function App() {
         <div className="App">
             <Header />
             <main>
-            <ListForm />
                 <p>Under Construction...</p>
             </main>
         </div>
