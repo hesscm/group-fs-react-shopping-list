@@ -12,7 +12,7 @@ function ShoppingList(props) {
                 {/* <p>apples</p> 
                 <p>5 lbs</p> */}
                 {props.list.map(item => 
-                    (<p>{item.name}</p>)
+                    (<p>{item.name} {item.quantity} {item.unit} {item.isPurchased}</p>)
                 )}
                  
                 
