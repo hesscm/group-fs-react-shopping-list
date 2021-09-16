@@ -43,7 +43,7 @@ function App() {
 
 
 
-    {/* // AXIOS PUT HERE */ }
+    {/* // AXIOS DELETE HERE */ }
     // Clear list deletes all objects from database
     const clearList = () => {
         axios({
@@ -57,7 +57,7 @@ function App() {
     }
 
 
-    {/* // AXIOS PUT/item HERE */ }
+    {/* // AXIOS PUT HERE */ }
     const resetList = () => {
         axios({
             method: 'PUT',
@@ -71,13 +71,22 @@ function App() {
 
     // update status to purchased
 
-    {/* // AXIOS DELETE HERE */ }
+    {/* // AXIOS PUT/item HERE */ }
 
 
 
 
     {/* // AXIOS DELETE/item HERE */ }
-
+    const removeItem = (creatureId) => {
+        axios({
+            method: 'DELETE',
+            url: `/list/item/${creatureId}`
+        }).then(response => {
+            console.log('cleared list item', response);
+        }).catch(error => {
+            console.log('error clearing list item', error);
+        })
+    }
 
 
     return (
