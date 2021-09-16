@@ -28,7 +28,7 @@ router.get('/', (req, res) => {
 
 //PUT ROUTE HERE
 //send a query to update every item's purchase status to false
-router.put('/', (req, res) => {
+router.put('/list', (req, res) => {
     const sqlText = `UPDATE list SET ispurchased=false;`;
     pool.query(sqlText)
         .then((result) => {
@@ -52,7 +52,7 @@ router.put('/', (req, res) => {
 
 //DELETE ROUTE HERE
 
-router.delete('/', (req,res) => {
+router.delete('/list', (req,res) => {
     const queryText = `DELETE * FROM "list";`
     pool.query(queryText).then(result => {
         res.sendStatus(200);
