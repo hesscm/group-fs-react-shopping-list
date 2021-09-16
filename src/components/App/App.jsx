@@ -77,10 +77,10 @@ function App() {
 
 
     {/* // AXIOS DELETE/item HERE */ }
-    const removeItem = (creatureId) => {
+    const removeItem = (itemId) => {
         axios({
             method: 'DELETE',
-            url: `/list/item/${creatureId}`
+            url: `/list/item/${itemId}`
         }).then(response => {
             console.log('cleared list item', response);
         }).catch(error => {
