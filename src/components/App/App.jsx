@@ -6,12 +6,14 @@ import Header from '../Header/Header.jsx'
 import './App.css';
 import ResetList from '../ResetList/ResetList';
 
-//vars to be used in ListForm
-const [newItemName, setNewItemName] = useState('');
-const [newItemQuantity, setNewItemQuantity] = useState(0);
-const [newItemUnit, setNewItemUnit] = useState('');
+
 
 function App() {
+
+    //vars to be used in ListForm
+    const [newItemName, setNewItemName] = useState('');
+    const [newItemQuantity, setNewItemQuantity] = useState(0);
+    const [newItemUnit, setNewItemUnit] = useState('');
 
     {/* // AXIOS GET HERE */ }
 
@@ -64,7 +66,7 @@ function App() {
         <div className="App">
             <Header />
             <main>
-            <ListForm addItem={addItem}
+            <ListForm 
             setNewItemName={setNewItemName}
             setNewItemQuantity={setNewItemQuantity}
             setNewItemUnit={setNewItemUnit}
