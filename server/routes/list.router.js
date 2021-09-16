@@ -46,7 +46,22 @@ router.put('/list', (req, res) => {
 
 
 //PUT/item ROUTE HERE
-
+router.put('/list', (req, res) => {
+    // making isPurchased true
+    // fix: ask if const itemId referencing the right thing?
+    const itemId = req.params.id;
+    const sqlText = `UPDATE list 
+                    SET isPurchased = true
+                    where "id" = $1;`;
+    pool.query(queryText, [itemId])
+    .then((result) => {
+        // fix Should there be something else here?
+        res.send(result.rows);
+    }).catch((error) => {
+        console.log('Error in PUT updating isPurchased.', error);
+        res.sendStatus(500);
+    })
+})
 
 
 
