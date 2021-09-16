@@ -13,7 +13,7 @@ function ListForm(props) {
              <input id="unit" onChange={
                 (event) => props.setNewItemUnit(event.target.value)}
             />
-            <button type="Save">Add New Creature</button>
+            <button type="submit">Save</button>
         </form>
         </>
     )
