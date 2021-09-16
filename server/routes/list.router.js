@@ -70,7 +70,7 @@ router.delete('/list', (req, res) => {
     const queryText = `DELETE * FROM "list";`
     pool.query(queryText).then(result => {
         res.sendStatus(200);
-    }).catch.catch(error => {
+    }).catch.(error => {
         console.log('error in deleting database');
         res.sendStatus(500);
     })
