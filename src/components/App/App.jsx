@@ -9,6 +9,8 @@ import ResetList from '../ResetList/ResetList';
 
 
 function App() {
+    // Destructuring
+    const [itemList, setItemList] = useState([]);
 
     //vars to be used in ListForm
     const [newItemName, setNewItemName] = useState('');
@@ -16,7 +18,22 @@ function App() {
     const [newItemUnit, setNewItemUnit] = useState('');
 
     {/* // AXIOS GET HERE */ }
+    const fetchItems = () => {
+        axios({
+            method: 'GET',
+            url: '/list',
+        }).then((response) => {
+            console.log(response.data);
+            setItemList(response.data);
+        }).catch((error) => {
+            console.log(error);
+            alert('Error making GET request.');
+        })
+    }
 
+    useEffect(() => {
+        fetchItems();
+    }, []);
 
 
 
