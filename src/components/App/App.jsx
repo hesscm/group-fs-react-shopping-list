@@ -21,7 +21,25 @@ function App() {
 
 
     {/* // AXIOS POST HERE */ }
-
+    const addItem = (event) => {
+        //to stop page from refreshing
+        event.preventDefault();
+        console.log('Submitted form!', newItemName, newItemQuantity, newItemUnit);
+        axios({
+          method: 'POST',
+          url: '/',
+          data: {
+            name: newItemName,
+            quantity: newItemQuantity,
+            unit: newItemUnit,
+          }
+        }).then((response) => {
+          fetchItems();
+        }).catch((error) => {
+            alert('Error in addItem');
+            console.log(error);
+        })
+      }
 
 
 
@@ -66,7 +84,7 @@ function App() {
         <div className="App">
             <Header />
             <main>
-            <ListForm 
+            <ListForm addItem={addItem}
             setNewItemName={setNewItemName}
             setNewItemQuantity={setNewItemQuantity}
             setNewItemUnit={setNewItemUnit}
