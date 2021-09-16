@@ -23,12 +23,26 @@ router.get('/', (req, res) => {
 
 //POST ROUTE HERE
 
-
+router.post('/', (req, res) => {
+    // getting object info from client
+    const itemToAdd = req.body;
+    // query to send to database with sanitized data
+    const queryText = `INSERT INTO list ("name", "quantity", "unit") VALUES ($1, $2, $3);`
+    pool.query(queryText, [itemToAdd.name,
+    itemToAdd.quantity,
+    itemToAdd.unit]).then(result => {
+        // send status code 200 if successful posting
+        res.sendStatus(200);
+    }).catch(result => {
+        // send status code 500 if error encountered
+        res.sendStatus(500);
+    })
+})
 
 
 //PUT ROUTE HERE
 //send a query to update every item's purchase status to false
-router.put('/list', (req, res) => {
+router.put('/', (req, res) => {
     const sqlText = `UPDATE list SET ispurchased=false;`;
     pool.query(sqlText)
         .then((result) => {
@@ -47,30 +61,16 @@ router.put('/list', (req, res) => {
 
 //PUT/item ROUTE HERE
 
-router.post('/list', (req, res) => {
-    // getting object info from client
-    const itemToAdd = req.body;
-    // query to send to database with sanitized data
-    const queryText = `INSERT INTO list ("name", "quantity", "unit") VALUES ($1, $2, $3);`
-    pool.query(queryText, [itemToAdd.name,
-    itemToAdd.quantity,
-    itemToAdd.unit])
-}).then(result => {
-    // send status code 200 if successful posting
-    res.sendStatus(200);
-}).catch(result => {
-    // send status code 500 if error encountered
-    res.sendStatus(500);
-})
+
 
 
 //DELETE ROUTE HERE
 
-router.delete('/list', (req, res) => {
+router.delete('/', (req, res) => {
     const queryText = `DELETE * FROM "list";`
     pool.query(queryText).then(result => {
         res.sendStatus(200);
-    }).catch.catch(error => {
+    }).catch.(error => {
         console.log('error in deleting database');
         res.sendStatus(500);
     })
