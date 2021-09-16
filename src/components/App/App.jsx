@@ -27,7 +27,7 @@ function App() {
         console.log('Submitted form!', newItemName, newItemQuantity, newItemUnit);
         axios({
           method: 'POST',
-          url: '/',
+          url: '/list',
           data: {
             name: newItemName,
             quantity: newItemQuantity,
