@@ -48,7 +48,7 @@ function App() {
     const clearList = () => {
         axios({
             method: 'DELETE',
-            url: '/'
+            url: '/list'
         }).then(response => {
             console.log('cleared list', response);
         }).catch(error => {
@@ -61,7 +61,7 @@ function App() {
     const resetList = () => {
         axios({
             method: 'PUT',
-            url: '/'
+            url: '/list'
            }).then((response) => {
         console.log('list was reset');
     }).catch((error) => {
