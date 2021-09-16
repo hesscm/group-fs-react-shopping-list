@@ -1,14 +1,19 @@
+
+const list = [
+  {name :'flour', quantity: 1, unit: 'lbs', isPurchased: FALSE},
+  {name :'cake', quantity: 2, unit: 'lbs', isPurchased: FALSE},
+  {name :'pudding', quantity: 5, unit: 'cups', isPurchased: FALSE},
+];
+
 function ShoppingList() {
     return(
         <>
             <div class="shopping-list-box">
-                <p>apples</p> 
-                <p>5 lbs</p>
-                {/* {props.list.map(item => 
-                    (<p key={item.id}>{item.name}</p>
-                    <p>{item.quantity}</p>
-                    <p>{item.unit}</p>)
-                )} */}
+                {/* <p>apples</p> 
+                <p>5 lbs</p> */}
+                {props.list.map(item => 
+                    (<p>{item.name}</p>)
+                )}
                  
                 
                 <button class="item-button">Buy</button>
