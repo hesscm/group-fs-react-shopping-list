@@ -60,7 +60,22 @@ router.put('/', (req, res) => {
 
 
 //PUT/item ROUTE HERE
-
+router.put('/:id', (req, res) => {
+    // making isPurchased true
+    console.log('in PUT route for isPurchased true')
+    const itemId = req.params.id;
+    const sqlText = `UPDATE list 
+                    SET isPurchased = true
+                    where "id" = $1;`;
+    pool.query(queryText, [itemId])
+    .then((result) => {
+        console.log('Successfully updated isPurchased!')
+        res.send(result.rows);
+    }).catch((error) => {
+        console.log('Error in PUT updating isPurchased.', error);
+        res.sendStatus(500);
+    })
+})
 
 
 
