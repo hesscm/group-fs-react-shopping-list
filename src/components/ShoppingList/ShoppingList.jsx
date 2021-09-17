@@ -1,29 +1,30 @@
+import { useState } from 'react';
+
 // const list = [
 //   {name :'flour', quantity: 1, unit: 'lbs', isPurchased: FALSE},
 //   {name :'cake', quantity: 2, unit: 'lbs', isPurchased: FALSE},
 //   {name :'pudding', quantity: 5, unit: 'cups', isPurchased: FALSE},
 // ];
 
-const list = [
-    {name :'flour', quantity: 1, unit: 'lbs'},
-    {name :'cake', quantity: 2, unit: 'lbs'},
-    {name :'pudding', quantity: 5, unit: 'cups'},
-  ];
+// const list = [
+//     {name :'flour', quantity: 1, unit: 'lbs'},
+//     {name :'cake', quantity: 2, unit: 'lbs'},
+//     {name :'pudding', quantity: 5, unit: 'cups'},
+//   ];
 
 function ShoppingList(props) {
+    // const [listItem, setListItem] = useState([]);
     return(
         <>
-            <div className="shopping-list-box">
+            <div>
                 {/* <p>apples</p> 
                 <p>5 lbs</p> */}
                 {props.itemList.map(item => 
-                    (<p key={item.id}>{item.name} {item.quantity} {item.unit}</p>)
+                (<div className="shopping-list-box" key={item.id}>
+                    {item.name} {item.quantity} {item.unit}<br /> <br />
+                     <button className="buy-item-button">Buy</button>
+                     <button className="remove-item-button">Remove</button></div>)
                 )}
-                 
-                
-                <button className="buy-item-button">Buy</button>
-                <button className="remove-item-button">Remove</button>
-
             </div>
         </>
     )
