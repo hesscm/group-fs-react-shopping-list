@@ -95,10 +95,8 @@ function App() {
 
 
     {/* // AXIOS DELETE/item HERE */ }
-<<<<<<< HEAD
     
     
-=======
     const removeItem = (itemId) => {
         axios({
             method: 'DELETE',
@@ -111,7 +109,6 @@ function App() {
     }
 
 
->>>>>>> master
     return (
         <div className="App">
             <Header />
@@ -122,12 +119,9 @@ function App() {
             setNewItemUnit={setNewItemUnit}
             />
                 <p>Under Construction...</p>
-<<<<<<< HEAD
-                <ShoppingList />
-=======
+                <ShoppingList itemList={itemList}/>
                 <ResetList clearList={clearList}
                     resetList={resetList} />
->>>>>>> master
             </main>
         </div>
     );

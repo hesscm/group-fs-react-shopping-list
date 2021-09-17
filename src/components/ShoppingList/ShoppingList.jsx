@@ -1,22 +1,28 @@
+// const list = [
+//   {name :'flour', quantity: 1, unit: 'lbs', isPurchased: FALSE},
+//   {name :'cake', quantity: 2, unit: 'lbs', isPurchased: FALSE},
+//   {name :'pudding', quantity: 5, unit: 'cups', isPurchased: FALSE},
+// ];
+
 const list = [
-  {name :'flour', quantity: 1, unit: 'lbs', isPurchased: FALSE},
-  {name :'cake', quantity: 2, unit: 'lbs', isPurchased: FALSE},
-  {name :'pudding', quantity: 5, unit: 'cups', isPurchased: FALSE},
-];
+    {name :'flour', quantity: 1, unit: 'lbs'},
+    {name :'cake', quantity: 2, unit: 'lbs'},
+    {name :'pudding', quantity: 5, unit: 'cups'},
+  ];
 
 function ShoppingList(props) {
     return(
         <>
-            <div class="shopping-list-box">
+            <div className="shopping-list-box">
                 {/* <p>apples</p> 
                 <p>5 lbs</p> */}
-                {props.list.map(item => 
-                    (<p>{item.name} {item.quantity} {item.unit} {item.isPurchased}</p>)
+                {props.itemList.map(item => 
+                    (<p key={item.id}>{item.name} {item.quantity} {item.unit}</p>)
                 )}
                  
                 
-                <button class="buy-item-button">Buy</button>
-                <button class="remove-item-button">Remove</button>
+                <button className="buy-item-button">Buy</button>
+                <button className="remove-item-button">Remove</button>
 
             </div>
         </>
