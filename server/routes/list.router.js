@@ -46,7 +46,7 @@ router.put('/list', (req, res) => {
 
 
 //PUT/item ROUTE HERE
-router.put('/', (req, res) => {
+router.put('/:id', (req, res) => {
     // making isPurchased true
     console.log('in PUT route for isPurchased true')
     const itemId = req.params.id;
