@@ -78,7 +78,17 @@ router.delete('/', (req, res) => {
 
 
 //DELETE/item ROUTE HERE
-
-
+router.delete('/item/:id', (req, res) => {
+    console.log(req.params);
+    const itemId = req.params.id;
+    console.log('in DELETE /item/:id');
+    const queryItem = `DELETE FROM "list" WHERE "id" = $1;`
+    pool.query(queryItem, [treatId]).then((listDB) => {
+        res.sendStatus(200);
+    }).catch((error) => {
+        console.log('error in DELETE /list/item', error);
+        res.sendStatus(500);
+    });
+});
 
 module.exports = router;
