@@ -94,7 +94,7 @@ function App() {
     const markItemPurchased = () => {
         axios({
             method: 'PUT',
-            url: `/list${itemid}`
+            url: `/list/${itemid}`
            }).then((response) => {
         console.log('item was marked purchased');
     }).catch((error) => {
