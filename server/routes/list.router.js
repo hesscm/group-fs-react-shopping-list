@@ -52,7 +52,7 @@ router.put('/:id', (req, res) => {
     const itemId = req.params.id;
     const sqlText = `UPDATE list 
                     SET isPurchased = true
-                    where "id" = $1;`;
+                    WHERE "id" = $1;`;
     pool.query(queryText, [itemId])
     .then((result) => {
         console.log('Successfully updated isPurchased!')
