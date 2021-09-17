@@ -91,6 +91,16 @@ function App() {
 
     {/* // AXIOS PUT/item HERE */ }
 
+    const markItemPurchased = () => {
+        axios({
+            method: 'PUT',
+            url: `/list${itemid}`
+           }).then((response) => {
+        console.log('item was marked purchased');
+    }).catch((error) => {
+        console.log('there was an error marking item purchased ', error);
+    })
+        }
 
 
 
@@ -119,7 +129,8 @@ function App() {
             setNewItemUnit={setNewItemUnit}
             />
                 <p>Under Construction...</p>
-                <ShoppingList itemList={itemList}/>
+                <ShoppingList itemList={itemList}
+                markItemPurchased={markItemPurchased}/>
                 <ResetList clearList={clearList}
                     resetList={resetList} />
             </main>
