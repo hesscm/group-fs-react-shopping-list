@@ -23,7 +23,7 @@ function ShoppingList(props) {
                 (<div className="shopping-list-box" key={item.id}>
                     {item.name} {item.quantity} {item.unit}<br /> <br />
                      <button className="buy-item-button">Buy</button>
-                     <button className="remove-item-button">Remove</button></div>)
+                     <button onClick={props.markItemPurchased}className="remove-item-button">Remove</button></div>)
                 )}
             </div>
         </>
